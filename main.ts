@@ -3,6 +3,7 @@ import * as fs from 'fs';
 import {
 	day01,
 	day02,
+	day03,
 } from './src';
 
 require('dotenv').config();
@@ -36,6 +37,7 @@ const input = await getInput();
 const dayFunctions: Record<string, (input: string) => void> = {
 	'01': day01,
 	'02': day02,
+	'03': day03,
 };
 
 const dayFunction = dayFunctions[paddedDayArg];
