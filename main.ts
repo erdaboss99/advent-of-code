@@ -8,6 +8,7 @@ import {
 	day05,
 	day06,
 	day07,
+	day08,
 } from './src';
 
 require('dotenv').config();
@@ -46,6 +47,7 @@ const dayFunctions: Record<string, (input: string) => void> = {
 	'05': day05,
 	'06': day06,
 	'07': day07,
+	'08': day08,
 };
 
 const dayFunction = dayFunctions[paddedDayArg];
