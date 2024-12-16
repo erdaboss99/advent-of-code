@@ -13,3 +13,4 @@ export * from './day12';
 export * from './day13';
 export * from './day14';
 export * from './day15';
+export * from './day16';
