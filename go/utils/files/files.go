@@ -7,19 +7,18 @@ import (
 	"runtime"
 )
 
-// ReadLines reads a file and returns a slice of strings, one for each line
-func ReadLines(name string) []string {
+func ReadLines(fileName string) []string {
 	_, callingFile, _, ok := runtime.Caller(1)
 
 	if !ok {
 		panic("unable to find caller so cannot build path to read file")
 	}
 
-	return readLines(name, callingFile)
+	return readLines(fileName, callingFile)
 }
 
-func readLines(name string, callingFile string) []string {
-	inputFile, err := os.Open(filepath.Join(filepath.Dir(callingFile), name))
+func readLines(fileName string, callingFile string) []string {
+	inputFile, err := os.Open(filepath.Join(filepath.Dir(callingFile), fileName))
 	if err != nil {
 		panic(err)
 	}
