@@ -2,11 +2,11 @@ package conversion
 
 import "strconv"
 
-func IntFromString(s string) int {
-	v, err := strconv.Atoi(s)
+func IntFromString(str string) int {
+	val, err := strconv.Atoi(str)
 	if err != nil {
 		panic(err)
 	}
 
-	return v
+	return val
 }
