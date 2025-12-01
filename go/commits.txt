@@ -1,0 +1,12 @@
+4ea289ff627547217eef6e9a3d927be832f32f22|2025-12-01 20:16:59 +0100|init go infrastructure for 2025
+ddca1cca4744816ec1edcc8939c5acb37de418d4|2025-12-01 20:21:36 +0100|create pipeline for testing solutions
+bb228f22344c0fda9054f3530f1e76971a2c5598|2025-12-01 20:30:50 +0100|add simple performance (runtime) monitoring to existing days
+0f574f1bce69f9a37a9a2b0f56de87126d84cfa4|2025-12-01 20:49:40 +0100|create README.md for the repo
+ac3c7a50fb34d274499a881231eb98f6e3f6aaec|2025-12-01 22:02:23 +0100|implement solutions for puzzle day one in go
+de56029451fdc176ed585ccf913021bb1fd60dbe|2025-12-02 08:49:17 +0100|implement solutions for puzzle day two in go
+2276e61c0dfb5dd438ab61a41e5b388e58de80ca|2025-12-03 06:14:56 +0100|implement solutions for puzzle day three in go
+716083179146ae424a5e95bcc9729f3effa979ed|2025-12-04 21:58:41 +0100|implement solutions for puzzle day four in go
+4deec69bb209e64f57961cf9f392a3be4770572e|2025-12-05 07:23:09 +0100|implement solutions for puzzle day five in go
+1ea110f3321ca93c3c2eba441bca983c74ac7a89|2025-12-06 11:07:34 +0100|implement solutions for puzzle day six in go
+28751e8875938dcf2c1d36dae6691f3128e078b9|2025-12-07 15:45:18 +0100|implement solutions for puzzle day seven in go
+bda4e7fea37709c3bccdd24d176b89ed726c97a9|2025-12-08 06:36:52 +0100|implement solutions for puzzle day eight in go
