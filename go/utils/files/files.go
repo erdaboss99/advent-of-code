@@ -7,6 +7,21 @@ import (
 	"runtime"
 )
 
+func Read(fileName string) string {
+	_, callingFile, _, ok := runtime.Caller(1)
+
+	if !ok {
+		panic("unable to find caller so cannot build path to read file")
+	}
+
+	content, err := os.ReadFile(filepath.Join(filepath.Dir(callingFile), fileName))
+	if err != nil {
+		panic(err)
+	}
+
+	return string(content)
+}
+
 func ReadLines(fileName string) []string {
 	_, callingFile, _, ok := runtime.Caller(1)
 
