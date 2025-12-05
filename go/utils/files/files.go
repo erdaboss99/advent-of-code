@@ -7,6 +7,35 @@ import (
 	"runtime"
 )
 
+func ReadSections(fileName string) [][]string {
+	_, callingFile, _, ok := runtime.Caller(1)
+
+	if !ok {
+		panic("unable to find caller so cannot build path to read file")
+	}
+
+	lines := readLines(fileName, callingFile)
+
+	var sections [][]string
+
+	curSection := make([]string, 0)
+
+	for _, line := range lines {
+		if line == "" {
+			sections = append(sections, curSection)
+			curSection = make([]string, 0)
+		} else {
+			curSection = append(curSection, line)
+		}
+	}
+
+	if len(curSection) > 0 {
+		sections = append(sections, curSection)
+	}
+
+	return sections
+}
+
 func Read(fileName string) string {
 	_, callingFile, _, ok := runtime.Caller(1)
 
