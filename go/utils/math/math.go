@@ -1,9 +1,20 @@
 package math
 
-import "cmp"
+import (
+	"cmp"
+
+	"github.com/erdaboss99/advent-of-code-utils/types"
+)
 
 func Max[T cmp.Ordered](a, b T) T {
 	if a > b {
+		return a
+	}
+	return b
+}
+
+func Min[T cmp.Ordered](a, b T) T {
+	if a < b {
 		return a
 	}
 	return b
@@ -26,4 +37,23 @@ func DivMod(dividend, divisor int) (quotient, remainder int) {
 	remainder = Mod(dividend, divisor)
 
 	return
+}
+
+func Sum[T types.Numeric](arr []T) T {
+	sum := T(0)
+
+	for _, val := range arr {
+		sum += val
+	}
+	return sum
+}
+
+func Prod[T types.Numeric](arr []T) T {
+	product := T(1)
+
+	for _, val := range arr {
+		product = product * val
+	}
+
+	return product
 }
