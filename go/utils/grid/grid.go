@@ -1,6 +1,9 @@
 package grid
 
-import "github.com/erdaboss99/advent-of-code-utils/points"
+import (
+	"github.com/erdaboss99/advent-of-code-utils/math"
+	"github.com/erdaboss99/advent-of-code-utils/points"
+)
 
 type Grid struct {
 	height int
@@ -45,4 +48,18 @@ func (g *Grid) IsInside(p points.Point2) bool {
 
 func (g *Grid) SetValue(p points.Point2, value byte) {
 	g.Data[p.Y*g.width+p.X] = value
+}
+
+func (g *Grid) FindValue(val byte) points.Point2 {
+	for idx, v := range g.Data {
+		if v == val {
+			q, r := math.DivMod(idx, g.width)
+			return points.Point2{
+				X: r,
+				Y: q,
+			}
+		}
+	}
+
+	panic("Value not found")
 }
