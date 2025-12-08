@@ -1,41 +1,40 @@
 package bfs
 
 import (
-	"github.com/erdaboss99/advent-of-code-utils/points"
 	"github.com/erdaboss99/advent-of-code-utils/queue"
 )
 
-type BFS struct {
-	queue   queue.Queue[points.Point2]
-	visited map[points.Point2]bool
+type BFS[T comparable] struct {
+	queue   queue.Queue[T]
+	visited map[T]bool
 }
 
-func Init(start points.Point2) BFS {
-	q := queue.Init[points.Point2]()
+func Init[T comparable](start T) BFS[T] {
+	q := queue.Init[T]()
 	q.Push(start)
 
-	return BFS{
+	return BFS[T]{
 		queue:   q,
-		visited: map[points.Point2]bool{},
+		visited: map[T]bool{},
 	}
 }
 
-func (b *BFS) Loop() bool {
+func (b *BFS[T]) Loop() bool {
 	return b.queue.HasItems()
 }
 
-func (b *BFS) Pop() points.Point2 {
+func (b *BFS[T]) Pop() T {
 	return b.queue.Pop()
 }
 
-func (b *BFS) Push(p points.Point2) {
-	b.queue.Push(p)
+func (b *BFS[T]) Push(item T) {
+	b.queue.Push(item)
 }
 
-func (b *BFS) IsVisited(p points.Point2) bool {
-	return b.visited[p]
+func (b *BFS[T]) IsVisited(item T) bool {
+	return b.visited[item]
 }
 
-func (b *BFS) VisitPoint(p points.Point2) {
-	b.visited[p] = true
+func (b *BFS[T]) VisitPoint(item T) {
+	b.visited[item] = true
 }
