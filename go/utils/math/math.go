@@ -2,6 +2,7 @@ package math
 
 import (
 	"cmp"
+	"math"
 
 	"github.com/erdaboss99/advent-of-code-utils/types"
 )
@@ -56,4 +57,8 @@ func Prod[T types.Numeric](arr []T) T {
 	}
 
 	return product
+}
+
+func SqrtInt(n int) int {
+	return int(math.Sqrt(float64(n)))
 }
